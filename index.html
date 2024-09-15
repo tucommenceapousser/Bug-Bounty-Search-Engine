@@ -3,110 +3,118 @@
 <head>
     <link rel="icon" type="image/svg+xml" href="https://trhacknon-dev.replit.app/favicon.svg">
     <title>Bug Bounty Search Engine</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #000000;
-        font-family: 'Arial', sans-serif;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000000;
+            font-family: 'Arial', sans-serif;
+        }
 
-    /* Background video */
-    .background-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
+        /* Background video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
-    /* Container for buttons and content */
-    .button-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
+        /* Neon glow for headers */
+        h1, h2 {
+            text-align: center;
+            color: #00ff00; /* Neon green */
+            text-shadow: 0 0 20px rgba(0, 255, 0, 0.8), 0 0 10px rgba(255, 0, 255, 0.8);
+            font-size: 36px;
+            margin-top: 50px;
+        }
 
-    .button-column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-right: 10px;
-    }
+        /* Container for buttons */
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
 
-    /* Futuristic button with vibrant contrast */
-    .futuristic-button {
-        padding: 12px 24px;
-        font-size: 18px;
-        background-color: transparent;
-        border: 3px solid #00ff00; /* Neon green border */
-        color: #00ff00; /* Neon green text */
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+        /* Futuristic button with neon glow */
+        .futuristic-button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: transparent;
+            border: 3px solid #00ff00; /* Neon green border */
+            color: #00ff00; /* Neon green text */
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 8px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+        }
 
-    .futuristic-button:hover {
-        background-color: #00ff00; /* Neon green background */
-        color: #000000; /* Black text on hover */
-        border-color: #ff00ff; /* Neon pink border on hover */
-        box-shadow: 0 0 20px rgba(255, 0, 255, 0.8); /* Pink glow */
-    }
+        .futuristic-button:hover {
+            background-color: #00ff00; /* Neon green background */
+            color: #000000; /* Black text on hover */
+            border-color: #ff00ff; /* Neon pink border on hover */
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.8); /* Pink glow */
+            transform: scale(1.05); /* Slight button scale */
+        }
 
-    /* Search container styling */
-    .search-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
+        /* Neon glow input field */
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ff00ff; /* Neon pink border */
+            border-radius: 4px;
+            background-color: transparent;
+            color: #00ff00; /* Neon green text */
+            outline: none;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+        }
 
-    .search-label {
-        font-size: 20px;
-        color: #ff00ff; /* Neon pink text */
-        margin-right: 10px;
-    }
+        .search-input:focus {
+            border-color: #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+        }
 
-    .search-input {
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #ff00ff; /* Neon pink border */
-        border-radius: 4px;
-        background-color: transparent;
-        color: #00ff00; /* Neon green text */
-    }
+        /* Neon styled text for "trhacknon" */
+        .trhacknon {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff00ff; /* Neon pink */
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* Neon glow effect */
+        }
 
-    /* Center container with content */
-    .center-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
+        /* Animation for smoother transitions */
+        .futuristic-button, .search-input {
+            transition: all 0.4s ease-in-out;
+        }
 
-    .center-container img {
-        display: block;
-        margin: 0 auto;
-    }
+        /* Custom scrollbar for a more modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #333;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00ff00;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff00ff;
+        }
+    </style>
 
-    /* Adding "trhacknon" name in style */
-    .trhacknon {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #ff00ff; /* Neon pink */
-        text-shadow: 0 0 10px rgba(255, 0, 255, 0.8); /* Neon glow effect */
-    }
-</style>
     <script>
          function googleSearch(type) {
         var targetDomain = document.getElementById('target').value;
@@ -361,7 +369,6 @@
     </script>
     </head>
 <body>
-     </div>
     <center><img src="https://trhacknon-dev.replit.app/rmask.svg" alt="Image" width="200" height="200"></center>
     <div class="trhacknon">By Trhacknon</div>
     <h1 style="text-align: center; color: #ffffff; margin-top: 50px;">Search Engine For Bug Bounty Hunters</h1>
