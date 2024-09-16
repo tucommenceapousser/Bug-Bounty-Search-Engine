@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="icon" type="image/svg+xml" href="https://trhacknon-dev.replit.app/favicon.svg">
-    <title>Bug Bounty Search Engine</title>
+    <title>Bug Bounty Search Engine by trhacknon</title>
     <style>
         body {
             margin: 0;
@@ -19,7 +19,9 @@
             left: 0;
             width: 100%;
             height: 100%;
+            object-fit: cover;
             z-index: -1;
+            opacity: 0.2;
         }
 
         /* Neon glow for headers */
@@ -114,7 +116,6 @@
             background: #ff00ff;
         }
     </style>
-
     <script>
          function googleSearch(type) {
         var targetDomain = document.getElementById('target').value;
@@ -369,13 +370,19 @@
     </script>
     </head>
 <body>
+    <video class="background-video" autoplay loop muted>
+        <source src="https://j.top4top.io/m_3181yzkao0.mp4" type="video/mp4">
+    </video>
+
     <center><img src="https://trhacknon-dev.replit.app/rmask.svg" alt="Image" width="200" height="200"></center>
     <div class="trhacknon">By Trhacknon</div>
-    <h1 style="text-align: center; color: #ffffff; margin-top: 50px;">Search Engine For Bug Bounty Hunters</h1>
-    <h2 style="display: flex;  color: #ffffff; margin-top: 20px;" for="target">Enter Target Domain:</h2>
-    <input type="text; margin-top: 20px;" id="target">
+    <h1 style="text-align: center; color: #00ff00; margin-top: 50px;">Search Engine For Bug Bounty Hunters</h1>
+    <h2 style="display: flex;  color: #00ff00; margin-top: 20px;" for="target">Enter Target Domain:</h2>
+    <input type="text" id="target" class="search-input">
     <br>
     <br>
+    <!-- Les boutons restent inchangés -->
+
      <button class="futuristic-button" onclick="googleSearch(1)">Directory listing vulnerabilities</button>
     <button class="futuristic-button" onclick="googleSearch(2)">Exposed Configuration files</button>
     <button class="futuristic-button" onclick="googleSearch(3)">Exposed Database files</button>
@@ -442,10 +449,10 @@
     <button class="futuristic-button" onclick="googleSearch(64)">Directories containing SQL Installs and/or SQL databases</button>
     <br>
 <br>
-<div style="display: flex; justify-content: center;">
-<a href="https://www.youtube.com/@CyberHacks200" target="_blank">
-  <img src="https://nitinyadav00.github.io/Bug-Bounty-Search-Engine/Youtube-01.svg" width="150" height="150">
-</a>
-</div>
+    <div style="display: flex; justify-content: center;">
+        <a href="https://www.youtube.com/" target="_blank">
+            <img src="http://trnbugbnty.0delta.cz/Youtube-01.svg" width="150" height="150">
+        </a>
+    </div>
 </body>
 </html>"
